@@ -95,9 +95,53 @@
 
 */
 
-let someNumber = 23
-let stringSomeNumber = String(someNumber)
-console.log(stringSomeNumber);
-console.log(typeof stringSomeNumber); // string
+// let someNumber = 23
+// let stringSomeNumber = String(someNumber)
+// console.log(stringSomeNumber);
+// console.log(typeof stringSomeNumber); // string
+
+
+
+
+/********************************************* Operations *********************************************************** */
+
+console.log(2 ** 3);
+
+let str1 = "hello"
+let str2 = " Pratik"
+let str3 = str1 + str2
+console.log(str3);
+
+// Not so important, will not be used in production
+console.log("1" + 2); // 12
+console.log(typeof ("1" + 2)) // string
+
+console.log( 1 + "2"); // 12
+console.log(typeof (1 + "2")) // string
+
+console.log("1" + 2 + 3); // 123
+console.log(typeof ("1" + 2 + 3)); // string
+
+console.log(1 + 2 + "3"); // 33
+console.log(typeof (1 + 2 + "3")); // string
+
+
+console.log(true); // true
+console.log(+true); // 1
+// console.log(true+); // error
+console.log(+""); // 0
+
+let counter = 100
+++counter
+console.log(counter);
+
+
+
+
+
+
+
+
+
 
 
