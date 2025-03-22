@@ -112,7 +112,7 @@ let str2 = " Pratik"
 let str3 = str1 + str2
 console.log(str3);
 
-// Not so important, will not be used in production
+// Not so important, will not be used in production (read ECMA doc for more knowledge)
 console.log("1" + 2); // 12
 console.log(typeof ("1" + 2)) // string
 
