@@ -94,3 +94,73 @@ console.log(loginUserMessage(""));  // Please enter a username
 
 // if we pass any value in the function then the default value will be overwritten by the passing value. it could be empty string as well.
 console.log(loginUserMessage("Pratik"));  // Pratik just logged in
+
+
+
+// Functions with Arrays & Objects
+
+// function calculateCartPrice(num1){
+    //     return num1
+    // }
+    
+    // console.log(calculateCartPrice(200, 300, 400)); // 200
+
+// Rest operator (...)
+function calculateCartPrice(...num1){
+    return num1
+}
+
+console.log(calculateCartPrice(200, 300, 400)); // [ 200, 300, 400 ]
+console.log(calculateCartPrice(200, 300, 400, 2000, 4000, 3000)); // [ 200, 300, 400, 2000, 4000, 3000 ]
+
+
+// Interview Question (What will be the value in num2)
+function calculateCartPrice2(val1, val2, ...num2){
+    return num2
+}
+
+console.log(calculateCartPrice2(200, 300, 400, 500, 600)); // [ 400, 500, 600 ]  // here  val1 = 200, val2 = 300, num2 = [ 400, 500, 600 ]
+
+
+// How to pass object in a function
+const user = {
+    username : "Pratik",
+    price : 200
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// handleObject(user)
+
+// we can directly pass the object in a function as well
+handleObject({
+    username : "Shivam",
+    price : 400
+})
+
+
+// How to pass Array in a function
+const myArr = [100, 200, 300, 400]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondValue(myArr));
+
+// we can directly pass the array in a function as well
+console.log(returnSecondValue([100, 200, 300, 400]));  // 200
+
+
+
+
+
+
+
+
+
+
+
+
