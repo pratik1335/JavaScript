@@ -97,3 +97,46 @@ console.log(Object.entries(user)); // less used
 
 console.log(user.hasOwnProperty("isLoggedIn"));  // true
 console.log(user.hasOwnProperty("isLogged"));  // false
+
+
+
+// Object De-structuring
+
+const course = {
+    courseName : "Javascript",
+    coursePrice : 999,
+    courseInstructor : "Pratik"
+}
+
+// console.log(course.courseInstructor);  // Pratik
+// to make the code look cleaner, we use object destructuring
+// it is nothing but a syntactical sugar so that we can avoid lenghty code syntaxes
+
+// const {courseInstructor} = course
+// console.log(courseInstructor);  // now we don't need to write course.courseInstructor
+
+// const {courseName, coursePrice} = course
+// console.log(courseName);  // Javascript
+// console.log(coursePrice); // 999
+
+// we can reduce it more 
+const {courseInstructor : instructor} = course
+console.log(instructor);  // pratik
+
+const {courseName : name, coursePrice : price} = course
+console.log(name);  // Javascript
+console.log(price); // 999
+
+
+// API (data comes in JSON form)
+
+// JSON (It can be in object form OR in Array form)
+// {
+//     name : "hitesh",
+//     courseName : "JS",
+//     price : "free"
+// }
+
+// JSON formatter
+
+// Famous API : randomuser me
