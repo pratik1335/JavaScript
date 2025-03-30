@@ -17,7 +17,7 @@
 // console.log(c);  // 30
 
 // From above example, a and b works correctly by showing error 
-// because there scope is only inside the if block, so if we try to 
+// because their scope is only inside the if block, so if we try to 
 // access them outside theiw scope then we will get error
 
 // But this is not happening in case of var, it should also through an error
@@ -41,7 +41,6 @@ if(true){
     var c = 30
     // console.log("INNER: ", a);  // 10   due to local scope
     // console.log("INNER : ", d);  // 500 due to global scope
-    
 }
 
 // console.log(a);  // 100   due to global scope
