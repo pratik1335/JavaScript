@@ -64,7 +64,7 @@ const myCoding = [
     }
 ]
 
-myCoding.forEach( (item) => {
+myCoding.forEach( (item) => {     // here item represents the each element of the Array which is nothing but an "object" in this Array
     console.log(item.languageName);
     console.log(item.languageFileName);
 })
