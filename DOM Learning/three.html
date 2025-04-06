@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff;">
+    
+</body>
+
+<script>
+
+    // create a div or h1 or any element element in javascript
+
+    // const h1 = document.createElement('h1') 
+    // console.log(h1); // <h1></h1>
+
+
+    const div = document.createElement('div')
+    console.log(div);  // <div></div>
+
+    div.className = "main"
+
+    // div.id = "myId"
+
+    div.id = Math.round(Math.random() * 10 + 1)
+
+    div.setAttribute('title', 'my title')  
+
+    div.style.backgroundColor = 'red'
+    div.style.padding = '10px'
+
+    
+    // We have created the div but that div is not showing on the browser page
+    // because right now it is inside the memory only
+    
+    // In order to show it on the page, We need to tell DOM to attach it
+
+    // div.innerText = "Understanding DOM"   // not preferable
+
+    // 1. create our own node
+    const addText = document.createTextNode("Understanding DOM")  // preferable
+
+    // 2. Append the node/child in the div
+    div.appendChild(addText)
+
+    // 3. Attach the div to the Document
+    document.body.appendChild(div)
+
+    
+
+
+</script>
+</html>
