@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding DOM</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+
+    // Add a list item
+
+    function addLanguage(langName){
+        // 1. create a list item
+        const li = document.createElement('li')
+
+        // 2. Add value in list item
+        li.innerHTML = `${langName}`
+
+        // 3. Select the unordered list in whcih we want to add the list item
+        // and add the list item in it using appendChild() method
+        document.querySelector('.language').appendChild(li)
+    }
+
+    // Call the function addLanguage()
+
+    addLanguage('python')
+    addLanguage('java')
+    addLanguage('cpp')
+
+    // But the above code is not optimize, because if there are thousands of list items
+    // then we need to traverse the whole tree and then add the new list item at the end
+    // which will take lot of time in large products
+    // This whole traversing is happening because of innerHTML.
+
+
+    // Optimize way
+    function addOptimizeLanguage(langName){
+        // 1. create a list item
+        const li = document.createElement('li')
+
+        // 2. Add value in list item
+        // const addText = document.createTextNode(langName)
+        // li.appendChild(addText)
+        li.appendChild(document.createTextNode(langName))  // always use this method in bigger production codes
+
+        // 3. Select the unordered list in whcih we want to add the list item
+        // and add the list item in it using appendChild() method
+        document.querySelector('.language').appendChild(li)
+    }
+
+    // This is optimize approach because here we don't need to traverse the whole DOM structure
+
+    addOptimizeLanguage('golang')
+
+
+    // Edit elements/values in DOM
+
+    // 1. select the element which you want to edit
+    const secondLang = document.querySelector('li:nth-child(2)')  
+    console.log(secondLang);  // <li>python</li>
+    
+    // secondLang.innerHTML = 'mojo'  -> not an optimize way but yes we can use it in small code base
+
+    // Optimize way: Create element
+    const newLi = document.createElement('li')
+    newLi.textContent = 'Mojo'
+
+    // Replace the exisiting child with the new child/element
+    secondLang.replaceWith(newLi)   // it will replace python with mojo
+
+
+
+    // One more example of Edit element
+
+    const firstLang = document.querySelector('li:first-child')
+
+    firstLang.outerHTML = '<li>TypeScript</li>' // it will replace Javascript with TypeScript
+
+    // NOTE: Use whichever method you like for edit the element.
+
+
+
+    // Remove the Element
+
+    const lastLang = document.querySelector('li:last-child')
+
+    lastLang.remove()  // this will remove last child of the list that is golang
+
+
+</script>
+</html>
